@@ -1,0 +1,13 @@
+1. Create a directory in hdfs
+
+hdfs dfs -mkdir /user/girl/datafile 
+
+2. login to the gateway node in winscp and place the file, 'data.txt' in directory say root/home/girl/datafile
+
+3. copy the file to hdfs
+
+hdfs dfs -put /home/girl/datafile user/girl/datafile
+
+4. load a hive table with the data 
+
+load data inpath'user/girl/datafile/data.txt' into table employee;
